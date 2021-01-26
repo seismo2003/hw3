@@ -2,6 +2,7 @@ function pageLoad() {
   // 👇 YOUR CODE BEGINS HERE. DON'T CHANGE ANY OTHER CODE. 👇
 
   // 🔥🔥🔥 YOUR CODE GOES HERE 🔥🔥🔥
+
   // the 'ride' variable contains data about a random ride (i.e. when the page)
   // is refreshed or reloaded, the 'ride' variable will contain something different
   // to get started, try to write other parts of 'ride' to the JavaScript console in Chrome
@@ -10,7 +11,21 @@ function pageLoad() {
 
   // these variables map to the elements on the finished page;
   // assign the proper value to each variable
+  if (ride.length > 1) {
+    levelOfService = 'Noober Pool'
+  }
+  else{
+    if (ride[0].purpleRequested) {
+      levelOfService = 'Noober Purple'
+    }
+    else if(ride[0].numberOfPassengers > 3){
+      levelOfService = 'Noober XL'
+    }
+    else {
+      levelOfService = 'Noober'
+    }
 
+  }
   // levelOfService
   // passenger1Name, passenger1Phone, passenger1NumberOfPassengers
   // passenger1PickupAddressLine1, passenger1PickupAddressLine2
@@ -21,6 +36,68 @@ function pageLoad() {
   // passenger3Name, passenger3Phone, passenger3NumberOfPassengers
   // passenger3PickupAddressLine1, passenger3PickupAddressLine2
   // passenger3DropoffAddressLine1, passenger3DropoffAddressLine2
-  
+  if (ride.length == 3) {
+    passenger1Name = `${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}` //`$` just means variable
+    passenger1Phone = ride[0].passengerDetails.phoneNumber
+    passenger1NumberOfPassengers = ride[0].numberOfPassengers 
+
+    passenger1PickupAddressLine1 = ride[0].pickupLocation.address;
+    passenger1PickupAddressLine2 = `${ride[0].pickupLocation.city}, ${ride[0].pickupLocation.state} ${ride[0].dropoffLocation.zip}`
+
+    passenger1DropoffAddressLine1 = ride[0].dropoffLocation.address
+    passenger1DropoffAddressLine2 = `${ride[0].dropoffLocation.city}, ${ride[0].dropoffLocation.state} ${ride[0].dropoffLocation.zip}`
+
+    passenger2Name = `${ride[1].passengerDetails.first} ${ride[1].passengerDetails.last}` //`$` just means variable
+    passenger2Phone = ride[1].passengerDetails.phoneNumber
+    passenger2NumberOfPassengers = ride[1].numberOfPassengers 
+
+    passenger2PickupAddressLine1 = ride[1].pickupLocation.address;
+    passenger2PickupAddressLine2 = `${ride[1].pickupLocation.city}, ${ride[1].pickupLocation.state} ${ride[1].dropoffLocation.zip}`
+
+    passenger2DropoffAddressLine1 = ride[1].dropoffLocation.address
+    passenger2DropoffAddressLine2 = `${ride[1].dropoffLocation.city}, ${ride[1].dropoffLocation.state} ${ride[1].dropoffLocation.zip}`
+
+    passenger3Name = `${ride[2].passengerDetails.first} ${ride[2].passengerDetails.last}` //`$` just means variable
+    passenger3Phone = ride[2].passengerDetails.phoneNumber
+    passenger3NumberOfPassengers = ride[2].numberOfPassengers 
+
+    passenger3PickupAddressLine1 = ride[2].pickupLocation.address
+    passenger3PickupAddressLine2 = `${ride[2].pickupLocation.city}, ${ride[2].pickupLocation.state} ${ride[2].dropoffLocation.zip}`
+
+    passenger3DropoffAddressLine1 = ride[2].dropoffLocation.address;
+    passenger3DropoffAddressLine2 = `${ride[2].dropoffLocation.city}, ${ride[2].dropoffLocation.state} ${ride[2].dropoffLocation.zip}`
+  }
+  else if (ride.length == 2){
+    passenger1Name = `${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}` //`$` just means variable
+    passenger1Phone = ride[0].passengerDetails.phoneNumber
+    passenger1NumberOfPassengers = ride[0].numberOfPassengers 
+
+    passenger1PickupAddressLine1 = ride[0].pickupLocation.address
+    passenger1PickupAddressLine2 = `${ride[0].pickupLocation.city}, ${ride[0].pickupLocation.state} ${ride[0].dropoffLocation.zip}`
+
+    passenger1DropoffAddressLine1 = ride[0].dropoffLocation.address
+    passenger1DropoffAddressLine2 = `${ride[0].dropoffLocation.city}, ${ride[0].dropoffLocation.state} ${ride[0].dropoffLocation.zip}`
+
+    passenger2Name = `${ride[1].passengerDetails.first} ${ride[1].passengerDetails.last}` //`$` just means variable
+    passenger2Phone = ride[1].passengerDetails.phoneNumber
+    passenger2NumberOfPassengers = ride[1].numberOfPassengers 
+
+    passenger2PickupAddressLine1 = ride[1].pickupLocation.address
+    passenger2PickupAddressLine2 = `${ride[1].pickupLocation.city}, ${ride[1].pickupLocation.state} ${ride[1].dropoffLocation.zip}`
+
+    passenger2DropoffAddressLine1 = ride[1].dropoffLocation.address
+    passenger2DropoffAddressLine2 = `${ride[1].dropoffLocation.city}, ${ride[1].dropoffLocation.state} ${ride[1].dropoffLocation.zip}`
+  }
+  else {
+    passenger1Name = `${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}` //`$` just means variable
+    passenger1Phone = ride[0].passengerDetails.phoneNumber
+    passenger1NumberOfPassengers = ride[0].numberOfPassengers 
+
+    passenger1PickupAddressLine1 = ride[0].pickupLocation.address
+    passenger1PickupAddressLine2 = `${ride[0].pickupLocation.city}, ${ride[0].pickupLocation.state} ${ride[0].dropoffLocation.zip}`
+
+    passenger1DropoffAddressLine1 = ride[0].dropoffLocation.address
+    passenger1DropoffAddressLine2 = `${ride[0].dropoffLocation.city}, ${ride[0].dropoffLocation.state} ${ride[0].dropoffLocation.zip}`
+  }
   //  👆 YOUR CODE ENDS HERE. DON'T CHANGE ANY OTHER CODE 👆
 }
